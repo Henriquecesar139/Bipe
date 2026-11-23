@@ -16,7 +16,7 @@ const niveis = [
     },
     {
         numero: 2,
-        titulo: "Cuidado com o buraco",
+        titulo: "Cuidado!!!",
         conceito: "Sequência",
         descricao: "Agora há buracos no caminho. Planeje a rota com cuidado.",
         icone: "🕳️",
@@ -79,20 +79,20 @@ function criarCartao(nivel, indice) {
     cartao.className = "nivel";
     cartao.href = nivel.link;
     cartao.style.setProperty("--acento", nivel.cor);
-    cartao.style.animationDelay = `${indice * 60}ms`;
+    cartao.style.setProperty("--atraso", `${indice * 70}ms`);
     cartao.setAttribute("aria-label", `Nível ${nivel.numero}: ${nivel.titulo}`);
 
     cartao.innerHTML = `
-        <div class="nivel-topo">
-            <span class="nivel-numero">${nivel.numero}</span>
-            <span class="nivel-icone" aria-hidden="true">${nivel.icone}</span>
+        <span class="nivel-numero">${nivel.numero}</span>
+        <div class="nivel-corpo">
+            <h3>${nivel.titulo}</h3>
+            <p>${nivel.descricao}</p>
+            <div class="nivel-rodape">
+                <span class="etiqueta">${nivel.conceito}</span>
+                <span class="dificuldade">${nivel.dificuldade}</span>
+            </div>
         </div>
-        <h3>${nivel.titulo}</h3>
-        <p>${nivel.descricao}</p>
-        <div class="nivel-rodape">
-            <span class="etiqueta">${nivel.conceito} · ${nivel.dificuldade}</span>
-            <span class="jogar">Jogar ➜</span>
-        </div>
+        <span class="nivel-icone" aria-hidden="true">${nivel.icone}</span>
     `;
 
     return cartao;

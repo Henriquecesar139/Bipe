@@ -3,35 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>robô - Menu</title>
+    <title>Bipe - Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main class="menu">
 
+        <!-- ===== HERO ===== -->
         <header class="hero">
-            <div class="hero-robo" aria-hidden="true">🤖</div>
-            <h1>Jogo do Robô</h1>
-            <p class="lead">
-                Um jogo de lógica de programação. Dê ordens ao robô, passo a passo,
-                para levá-lo até a lâmpada 💡 sem cair nos buracos 🕳️.
-            </p>
+            <div class="hero-texto">
+                <h1>Programe o robô.<br>Acenda a lâmpada.</h1>
+                <p class="lead">
+                    Dê ordens passo a passo, evite os buracos e descubra como
+                    um computador pensa. Cada nível ensina uma ideia nova de programação.
+                </p>
+                <div class="hero-acoes">
+                    <a class="botao" href="nv1/nv1.html">Começar no nível 1</a>
+                    <a class="botao-sec" href="#niveis-titulo">Ver todos os níveis</a>
+                </div>
+            </div>
+
+            <!-- Demonstração animada: o robô executa o programa -->
+            <div class="demo" aria-hidden="true">
+                <div class="tabuleiro">
+                    <span class="buraco" style="--x:1;--y:1"></span>
+                    <span class="buraco" style="--x:3;--y:1"></span>
+                    <span class="buraco" style="--x:1;--y:0"></span>
+                    <span class="lampada">💡</span>
+                    <span class="robo">🤖</span>
+                </div>
+                <div class="programa">
+                    <span class="bloco b1">Frente ×2</span>
+                    <span class="bloco b2">Subir ×2</span>
+                    <span class="bloco b3">Frente ×2</span>
+                    <span class="bloco b4">Acender</span>
+                </div>
+            </div>
         </header>
 
+        <!-- ===== COMO JOGAR ===== -->
         <section class="como-jogar" aria-labelledby="como-titulo">
             <h2 id="como-titulo">Como jogar</h2>
             <ol class="passos">
                 <li><span>1</span> Monte o programa com os botões de comando.</li>
-                <li><span>2</span> Aperte Executare veja o robô obedecer.</li>
-                <li><span>3</span> Chegou na lâmpada? Use Acender e vença!</li>
+                <li><span>2</span> Aperte <strong>Executar</strong> e veja o robô obedecer.</li>
+                <li><span>3</span> Chegou na lâmpada? Use <strong>Acender</strong> e vença!</li>
             </ol>
             <p class="dica">Errou? Sem problema: o botão <strong>Reiniciar</strong> limpa tudo para você tentar de novo.</p>
         </section>
 
+        <!-- ===== NÍVEIS ===== -->
         <section aria-labelledby="niveis-titulo">
             <h2 id="niveis-titulo">Escolha um nível</h2>
             <div id="niveis" class="niveis"></div>
+        </section>
+
+        <!-- ===== PENSAMENTO COMPUTACIONAL ===== -->
+        <section class="pc" aria-labelledby="pc-titulo">
+            <div class="pc-texto">
+                <h2 id="pc-titulo">Por que jogar?</h2>
+                <p>
+                    Computação não é só mexer no computador: é uma forma de resolver problemas.
+                    Esse jeito de pensar se chama <strong>pensamento computacional</strong>,
+                    e ele ajuda em qualquer área, de jogos à matemática e à vida de todo dia.
+                    Aqui você pratica as quatro ideias principais sem perceber.
+                </p>
+            </div>
+            <dl class="pc-pilares">
+                <div><dt>Decomposição</dt><dd>Quebrar um problema grande em passos pequenos.</dd></div>
+                <div><dt>Padrões</dt><dd>Notar o que se repete e usar <em>Repetir</em>.</dd></div>
+                <div><dt>Abstração</dt><dd>Focar no que importa e ignorar o resto.</dd></div>
+                <div><dt>Algoritmo</dt><dd>Escrever as ordens na sequência certa.</dd></div>
+            </dl>
         </section>
 
         <footer class="rodape">Aprenda sequências, repetições e condições jogando 🧠</footer>
